@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container-fluid ">
+        <div class="row">
+            <h2 >{{blog_title}}</h2>
+        </div>
+        <div class="row m-3">
+            {% if posts %}
+            {% for post in posts %}
+                <div class="col-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img style="height:300; width:300 " src="{{post.img_url}}" class="img-fluid" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <h5 class="card-title">{{post.title}}</h5>
+                                    <p class="card-text">{{post.content | truncatechars:60}}</p>
+                                    <div class="d-flex justify-content-between">
+                                        <a href="{% url 'detail' slug=post.slug %}">Read More</a>
+                                        <a class="text-decoration-none text-dark fw-bold" href="#">Sports</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            {% else %}
+                <p>No Posts Available</p>
+            {% endif %}
+        </div>
+        <div class="row">
+           
+        </div>
+        
+    </div>
+{% endblock %}
