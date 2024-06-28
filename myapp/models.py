@@ -2,13 +2,23 @@ from django.db import models
 from django.utils.text import slugify
 from django.db import transaction
 
+#Category
+class Category(models.Model):
+
+    name = models.CharField(max_length=100)    
+
+    def __str__(self):
+        return self.name
+
+
 class Post(models.Model):
     title = models.CharField(max_length=110)
     content = models.TextField()
     img_url = models.ImageField(null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(unique=True, blank=True, null=True)
-
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = self.generate_unique_slug()
@@ -26,12 +36,5 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-#Category
-class Category(models.Model):
-
-    name = models.CharField(max_length=100)    
-
-    def __str__(self):
-        return self.name
 
    
