@@ -53,7 +53,7 @@ class Command(BaseCommand):
             "Examining the effects of globalization on local and global economies. Globalization has interconnected economies and societies, facilitating trade, cultural exchange, and technological advancements while also posing challenges such as income inequality and environmental degradation.",
             "Embracing mindfulness practices for enhanced well-being and productivity. Mindfulness practices, such as meditation and yoga, promote mental clarity, emotional resilience, and overall well-being, enabling individuals to thrive in today's fast-paced world.",
             "Revolutionizing education through online learning platforms and resources. Online learning platforms offer flexible and accessible education opportunities, democratizing access to knowledge and empowering learners to pursue their educational goals.",
-            "Exploring the intersection of art, design, and technology in the digital age. The convergence of art, design, and technology has led to innovative creations and experiences, blurring the boundaries between physical and digital worlds.",     
+            "Exploring the intersection of art, design, and technology in the digital age. The convergence of art, design, and technology has led to innovative creations and experiences, blurring the boundaries between physical and digital worlds.",
         ]
 
         img_urls = [

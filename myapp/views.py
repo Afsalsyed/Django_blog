@@ -20,8 +20,9 @@ def detail(request, slug):
     try:
         #Getting from db
         post = Post.objects.get(slug=slug)
+        related_posts = Post.objects.filter(category = post.category).exclude(pk=post.id)
         
     except Post.DoesNotExist:
         raise Http404("Page does not exist!")
     
-    return render(request, 'detail.html', {'post': post })
+    return render(request, 'detail.html', {'post': post, 'related_posts' : related_posts  })
